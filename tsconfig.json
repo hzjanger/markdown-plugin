@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "z-markdown": [
+        "dist/z-markdown"
+      ],
+      "z-markdown/*": [
+        "dist/z-markdown/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

@@ -7,24 +7,35 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build_lib": "ng build --prod z-markdown",
+    "npm_pack": "cd dist/z-markdown && npm pack",
+    "package": "npm run build_lib && npm run npm_pack"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "~8.2.0",
+    "@angular/cdk": "~8.2.3",
     "@angular/common": "~8.2.0",
     "@angular/compiler": "~8.2.0",
     "@angular/core": "~8.2.0",
     "@angular/forms": "~8.2.0",
+    "@angular/material": "~8.2.3",
     "@angular/platform-browser": "~8.2.0",
     "@angular/platform-browser-dynamic": "~8.2.0",
     "@angular/router": "~8.2.0",
+    "@ctrl/ngx-codemirror": "^2.2.1",
+    "codemirror": "^5.52.0",
+    "hammerjs": "^2.0.8",
+    "highlight.js": "^9.18.1",
+    "marked": "^0.8.1",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.802.2",
+    "@angular-devkit/build-ng-packagr": "~0.802.2",
     "@angular/cli": "~8.2.2",
     "@angular/compiler-cli": "~8.2.0",
     "@angular/language-service": "~8.2.0",
@@ -39,8 +50,10 @@
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.0",
+    "ng-packagr": "^5.3.0",
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
+    "tsickle": "^0.36.0",
     "tslint": "~5.15.0",
     "typescript": "~3.5.3"
   }

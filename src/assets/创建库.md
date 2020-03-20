@@ -1,0 +1,77 @@
+# Bootstrap和jQuery
+
+## 引入bootstrap和jQuery
+
+1. 使用npm安装bootstrap：`npm install bootstrap --save`
+
+2. 在`angular.json`文件中引入bootstrap的css文件
+
+在`projects->项目名(myapp)->architect->build->options->styles`中添加如下代码
+
+```json
+"styles": [
+    "./node_modules/bootstrap/dist/css/bootstrap.css"
+],
+```
+
+3. 在`angular.json`文件中引入bootstrap需要的js文件
+在`projects->myapp->architect->build->options0->scripts`添加bootstrap需要的js文件
+
+```json
+"scripts": [
+    "./node_modules/bootstrap/dist/js/bootstrap.bundle.js",
+]
+```
+
+4. 在这里启动服务器会报错，因为bootstrap是依赖jQuery的，所以还需要引入jQuery，不然bootstrap的一些方法是无法使用的
+
+5. 使用npm安装jQuery:`npm install jquery --save`
+
+6. 使用npm安装jQuery的类型描述文件：`npm install @types/jquery --save-dev`
+
+7. 在`angular.json`文件中引入`jQuery`
+
+在`projects->myapp->architect->build->options0->scripts`添加jQuery需要的js文件,在这里注意下，如果需要使用bootstrap，那么加载的jQuery的js文件需要在`bootstrap.bundle.js`之前加载
+
+```json
+"scripts": [
+    "./node_modules/jquery/dist/jquery.js",
+    "./node_modules/bootstrap/dist/js/bootstrap.bundle.js",
+]
+```
+
+## jQuery在项目中的使用
+
+如果已经使用了`npm install jquery --save`和`npm install @types/jquery --save-dev`安装了jQuery和jQuery的类型描述文件，那么只需要在使用的地方把`jQuery`模块导入进来就可以了
+
+```typescript
+import {AfterViewInit, Component, OnInit} from '@angular/core';
+//导入jQuery模块
+import * as $ from 'jquery';
+
+@Component({
+  selector: 'app-database',
+  templateUrl: './database.component.html',
+  styleUrls: ['./database.component.scss']
+})
+
+export class DatabaseComponent implements OnInit, AfterViewInit {
+  constructor() {
+  }
+
+  ngOnInit() {
+  }
+
+  ngAfterViewInit(): void {
+
+  	//在angular的ngAfterViewInit里面使用jQuery，
+    $('#add-databases').on('click', function (e) {
+      
+    });
+    
+  }
+}
+
+```
+
+注意：在Angular使用jQuery，最好是在`ngAfterViewInit`里面使用，因为如果需要获取的dom节点在一个`*ngif`中，那么会获取不到

@@ -28,6 +28,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -93,6 +94,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -124,6 +126,52 @@
           }
         }
       }
-    }},
+    },
+    "z-markdown": {
+      "projectType": "library",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/z-markdown",
+      "sourceRoot": "projects/z-markdown/src",
+      "prefix": "z",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/z-markdown/tsconfig.lib.json",
+            "project": "projects/z-markdown/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/z-markdown/ng-package.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/z-markdown/src/test.ts",
+            "tsConfig": "projects/z-markdown/tsconfig.spec.json",
+            "karmaConfig": "projects/z-markdown/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/z-markdown/tsconfig.lib.json",
+              "projects/z-markdown/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
   "defaultProject": "markdown-plugin"
 }

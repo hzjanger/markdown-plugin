@@ -1,5 +1,13 @@
 # MarkdownPlugin
 
+## 依赖
+
+依赖`highlight.js`, `@ctrl/ngx-codemirror`,`codemirror`,在使用是先安装这三个库
+
+```bash
+npm i @ctrl/ngx-codemirror codemirror highlight.js
+```
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.2.
 
 ## Development server

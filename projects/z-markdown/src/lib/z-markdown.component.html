@@ -1,0 +1,9 @@
+<div class="markdown-box" *ngIf="formGroup">
+  <form [formGroup]="formGroup">
+    <z-codemirror class="codemirror" [formControlName]="key" [options]="options"
+                  (ngModelChange)="change($event)"></z-codemirror>
+  </form>
+  <div class="show-markdown">
+    <z-show-markdown *ngIf="markdown" [markdown]="markdown"></z-show-markdown>
+  </div>
+</div>
