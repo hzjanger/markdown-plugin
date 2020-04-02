@@ -34,7 +34,6 @@ export class ZMarkdownComponent implements OnInit {
 
   change( data ) {
     this.markdown = data;
-    console.log( data );
   }
 
 

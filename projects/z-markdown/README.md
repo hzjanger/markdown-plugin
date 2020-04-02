@@ -1,24 +1,14 @@
 # ZMarkdown
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.0.
+该库使用的 [Angular CLI](https://github.com/angular/angular-cli) 版本为 8.2.0.
 
-## Code scaffolding
+## 安装
 
-Run `ng generate component component-name --project z-markdown` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project z-markdown`.
-> Note: Don't forget to add `--project z-markdown` or else it will be added to the default project in your `angular.json` file. 
+使用该库时必须先安装`codemirror`,`highlight.js`,`marked`
 
-## Build
+```bash
+npm install codemirror highlight.js marked
+```
 
-Run `ng build z-markdown` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Publishing
-
-After building your library with `ng build z-markdown`, go to the dist folder `cd dist/z-markdown` and run `npm publish`.
-
-## Running unit tests
-
-Run `ng test z-markdown` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+本来是直接使用[ngx-codemirror](https://www.npmjs.com/package/@ctrl/ngx-codemirror),但是在打包的时候出现了报错,我使用的是`2.2.1`的版本,
+然后看了下它的实现方式,就没有在使用`ngx-codemirror`了

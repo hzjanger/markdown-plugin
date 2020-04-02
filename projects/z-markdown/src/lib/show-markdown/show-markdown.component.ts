@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 
 import marked from 'marked';
 import hljs from 'highlight.js';
+import { HtmlEscape } from '../utils/html-escape';
 
 @Component( {
   selector: 'z-show-markdown',
@@ -26,7 +27,7 @@ export class ShowMarkdownComponent implements OnInit {
       }
     } );
 
-    this.markdown$ = marked( markdown );
+    this.markdown$ = marked( HtmlEscape.htmlEncode( markdown ) );
 
   }
 
