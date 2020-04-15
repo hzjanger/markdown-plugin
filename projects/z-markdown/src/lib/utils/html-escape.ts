@@ -11,7 +11,11 @@ export class HtmlEscape {
     let counter = 0;
     for ( let i = 0; i < arr.length - 1; i++ ) {
       if ( arr[ i ] === '`' ) {
-        counter++;
+        if ( counter === 3 && arr[ i + 1 ] === '`' && arr[ i + 2 ] === '`' ) {
+          counter += 3;
+        } else if ( counter < 3 ) {
+          counter++;
+        }
         result.push( arr[ i ] );
       } else {
         if ( counter === 1 || counter === 3 ) {
