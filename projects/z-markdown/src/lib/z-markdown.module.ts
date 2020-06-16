@@ -6,6 +6,7 @@ import { HtmlPipe } from './pipe/html.pipe';
 import { CommonModule } from '@angular/common';
 import { CodemirrorComponent } from './codemirror/codemirror.component';
 import { EditorAlignJustifyComponent } from './editor-align-justify/editor-align-justify.component';
+import { PreviewComponent } from './preview/preview.component';
 
 
 @NgModule( {
@@ -14,7 +15,8 @@ import { EditorAlignJustifyComponent } from './editor-align-justify/editor-align
     ShowMarkdownComponent,
     HtmlPipe,
     CodemirrorComponent,
-    EditorAlignJustifyComponent
+    EditorAlignJustifyComponent,
+    PreviewComponent
   ],
   imports: [
     FormsModule,

@@ -1,7 +1,42 @@
+.header-operator {
+  width: 100%;
+  height: 20px;
+  background: #f3f5f7;
+  display: flex;
+  justify-content: space-between;
+
+  .header-operator-right {
+    box-sizing: border-box;
+    padding: 0 1rem;
+  }
+
+
+  z-preview {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    cursor: pointer;
+    padding: 0 5px;
+    border-radius: 5px;
+
+    &:hover {
+      background: #DCDCDC;
+    }
+  }
+
+  .operator-right {
+    display: flex;
+    align-items: center;
+  }
+}
+
 .markdown-box {
   width: 100%;
   height: 100%;
   display: flex;
+  //flex-direction: column;
+
 
   form {
     height: 100%;
