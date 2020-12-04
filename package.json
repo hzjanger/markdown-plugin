@@ -27,7 +27,7 @@
     "@types/codemirror": "0.0.89",
     "codemirror": "^5.52.0",
     "hammerjs": "^2.0.8",
-    "highlight.js": "^9.18.1",
+    "highlight.js": "^10.4.1",
     "marked": "^0.8.1",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
